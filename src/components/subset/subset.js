@@ -1,4 +1,3 @@
-import * as JSZip from "jszip";
 import { saveAs } from "file-saver";
 import { UnicodeRange } from "@japont/unicode-range";
 
