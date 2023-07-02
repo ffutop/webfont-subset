@@ -35,9 +35,8 @@ import generateSubsetList from "@/components/subset/subset.js";
 export default {
   mounted() {},
   methods: {
-    async uploadFile() {
+    uploadFile() {
       const file = this.$refs.fontFile.files[0];
-      console.log(file);
       const reader = new FileReader();
 
       reader.onload = event => {
