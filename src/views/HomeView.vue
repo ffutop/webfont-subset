@@ -1,7 +1,7 @@
 <script>
 import TheWelcome from "../components/TheWelcome.vue";
 
-import generateSubsetList from "@/components/subset/copy.js";
+import generateSubsetList from "@/components/subset/subset.js";
 
 export default {
   mounted() {
@@ -9,7 +9,13 @@ export default {
   },
   methods: {
     subset() {
-        generateSubsetList();
+      fetch("Noto_Sans_SC/NotoSansSC-Regular.otf")
+        .then(x => {
+          return x.arrayBuffer();
+        })
+        .then(fontBlob => {
+          generateSubsetList("Noto", fontBlob);
+        });
     }
   }
 };
