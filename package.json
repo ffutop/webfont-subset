@@ -10,6 +10,7 @@
   "dependencies": {
     "@japont/unicode-range": "^1.0.0",
     "file-saver": "^2.0.5",
+    "pako": "^2.1.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2"
   },

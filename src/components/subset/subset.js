@@ -3,6 +3,7 @@ import { UnicodeRange } from "@japont/unicode-range";
 
 import CJK_SC_SUBSET_NORM from "@/components/subset/cjk-sc-subset-norm.js";
 import { getFontName } from "@/components/font/font.js";
+import { convert } from '@/utils/font-convert.js';
 
 let exports;
 let heapu8;
@@ -79,8 +80,8 @@ const generateSubsetList = (fontFileName, fontDisplay, fontBlob) => {
       const unicodeArray = UnicodeRange.parse(unicodeRangeArray).map(cp => String.fromCodePoint(cp));
       const subsetFontBlob = generateSubset(face, unicodeArray);
 
-      const fontSliceFileName = `${urlEncode(fontName)}_${index++}.otf`;
-      fontsFolder.file(fontSliceFileName, subsetFontBlob);
+      const fontSliceFileName = `${urlEncode(fontName)}_${index++}.woff2`;
+      fontsFolder.file(fontSliceFileName, convert(subsetFontBlob, 'sfnt', 'woff2'));
       cssContent += generateCSS(index, fontName, `./fonts/${fontSliceFileName}`, fontDisplay, unicodeRangeArray);
     });
 

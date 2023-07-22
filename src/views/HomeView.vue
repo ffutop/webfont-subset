@@ -40,9 +40,8 @@ export default {
       const reader = new FileReader();
 
       reader.onload = event => {
-        const contents = event.target.result;
-        const fontBlob = new Uint8Array(contents);
-        generateSubsetList(file.name, "swap", fontBlob);
+        const buffer = event.target.result;
+        generateSubsetList(file.name, "swap", buffer);
       };
 
       reader.readAsArrayBuffer(file);
