@@ -1,10 +1,10 @@
 <template>
   <div class="container mx-auto">
     <div class="bg-sky-50 rounded-lg shadow-md p-3 my-3">
-      <p class="text-sky-400 text-3xl font-medium mt-2">中文网络字体分片工具</p>
+      <p class="text-sky-400 text-3xl font-medium mt-2">中文网络字体在线分片工具</p>
     </div>
-    <div class="relative">
-      <div class="bg-sky-50 z-10 rounded-lg shadow-md p-3 my-3">
+    <div class="relative my-3">
+      <div class="bg-sky-50 z-10 rounded-lg shadow-md p-24">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="mx-auto w-8 h-8 stroke-sky-400 stroke-2"
@@ -25,6 +25,20 @@
         ref="fontFile"
         @change="uploadFile"
       />
+    </div>
+    <div class="grid grid-cols-2 gap-3 my-3">
+      <div class="bg-sky-50 rounded-lg shadow-md p-3">
+        <p class="text-sky-400 text-xl font-medium mt-2 text-center">在线分片工具·使用说明</p>
+        <p class="text-sky-400 text-l font-medium mt-2">1. 选择 OTF / TTF 格式的字体文件</p>
+        <p class="text-sky-400 text-l font-medium mt-2">2. 等待在线处理字体分片（一般 4~5 秒能够完成）</p>
+        <p class="text-sky-400 text-l font-medium mt-2">3. 获得自动下载的 example.zip 压缩包</p>
+      </div>
+      <div class="bg-sky-50 rounded-lg shadow-md p-3">
+        <p class="text-sky-400 text-xl font-medium mt-2 text-center">网络字体·使用说明</p>
+        <p class="text-sky-400 text-l font-medium mt-2">1. 解压 example.zip 压缩包</p>
+        <p class="text-sky-400 text-l font-medium mt-2">2. 将 font.css 和 fonts/ 放置到项目资源目录或 CDN</p>
+        <p class="text-sky-400 text-l font-medium mt-2">3. 引用 font.css，按需配置 font-family（示例见 sample.html）</p>
+      </div>
     </div>
   </div>
 </template>
